@@ -17,7 +17,7 @@ echo "################################################################"
 
 git clone https://aur.archlinux.org/yay.git
 
-cd /yay
+cd yay
 
 makepkg -si
 

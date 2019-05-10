@@ -108,6 +108,21 @@ echo "################################################################"
 echo "######## Openbox and components has been installed  ############"
 echo "################################################################"
 
+
+echo "################################################################"
+echo "#########        Install Sound Software         ################"
+echo "################################################################"
+
+sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol  --noconfirm --needed
+sudo pacman -S alsa-utils alsa-plugins alsa-lib alsa-firmware --noconfirm --needed
+sudo pacman -S gst-plugins-good gst-plugins-bad gst-plugins-base gst-plugins-ugly  gstreamer  --noconfirm --needed
+
+echo "################################################################"
+echo "#########      Sound Software installed         ################"
+echo "################################################################"
+
+
+
 echo "################################################################"
 echo "########   Installing Network Management Software   ############"
 echo "################################################################"

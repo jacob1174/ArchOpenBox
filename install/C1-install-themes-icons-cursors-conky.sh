@@ -306,7 +306,7 @@ else
 
 	#checking which helper is installed
 
-	elif pacman -Qi yay &> /dev/null; then
+	if pacman -Qi yay &> /dev/null; then
 		
 		echo "Installing with yay"
 		yay -S --noconfirm $package

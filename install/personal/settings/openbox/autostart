@@ -15,28 +15,20 @@
 ##compositor
 compton --config ~/.config/compton.conf -b &
 
+# Launch Variety
+variety &
 
 ##volume icons
-#volumeicon &
-pasystray &
 
-
+# Launch Plank
 plank &
 
-
 ##panels
-#xfce4-panel &
 tint2 &
 
-
 ##PolicyKit authentication
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+udiskie &
 
-
-## numeric keyboard on
-#numlockx on
-
-conky &
 
 
 

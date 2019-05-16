@@ -27,7 +27,7 @@ echo "####             Installing reflector if needed             ####"
 echo "################################################################"
 
 
-# installing refector to test wich servers are fastest
+# installing refector to test which servers are fastest
 sudo pacman -S reflector --needed --noconfirm
 
 
@@ -129,12 +129,8 @@ echo "################################################################"
 
 sudo pacman -S networkmanager --noconfirm
 sudo pacman -S network-manager-applet --noconfirm
-sudo pacman -S wpa_supplicant --noconfirm
-sudo pacman -S dhclient --noconfirm
-sudo pacman -S dialog --noconfirm
 
 sudo systemctl enable NetworkManager.service
-
 
 
 echo "################################################################"
@@ -154,33 +150,23 @@ echo "################################################################"
 echo "#########     Installing from Arch repository   ################"
 echo "################################################################"
 
-sudo pacman -S arandr  --noconfirm
-sudo pacman -S compton  --noconfirm
-sudo pacman -S dmenu  --noconfirm
-sudo pacman -S exo  --noconfirm
-sudo pacman -S geany  --noconfirm
-sudo pacman -S feh  --noconfirm
-sudo pacman -S gmrun  --noconfirm
-sudo pacman -S gsimplecal  --noconfirm
-sudo pacman -S lxrandr  --noconfirm
-sudo pacman -S lxterminal --noconfirm
-sudo pacman -S pcmanfm --noconfirm
-sudo pacman -S plank --noconfirm
-sudo pacman -S tint2  --noconfirm
-sudo pacman -S xorg-xkill  --noconfirm
 
-sudo pacman -S --noconfirm  archey3 baobab bleachbit catfish conky curl
-sudo pacman -S --noconfirm  dconf-editor dmidecode 
-sudo pacman -S --noconfirm  filezilla firefox
-sudo pacman -S --noconfirm  galculator git glances 
-sudo pacman -S --noconfirm  gparted gpick #
-sudo pacman -S --noconfirm  hardinfo hddtemp htop 
-sudo pacman -S --noconfirm  lm_sensors lsb-release meld
-sudo pacman -S --noconfirm  net-tools notify-osd plank polkit-gnome 
-sudo pacman -S --noconfirm  ristretto sane screenfetch scrot 
-sudo pacman -S --noconfirm  simple-scan smplayer sysstat 
-sudo pacman -S --noconfirm  terminator transmission-cli transmission-gtk tumbler
-sudo pacman -S --noconfirm  variety vlc vnstat wget unclutter  
+sudo pacman -S --noconfirm --needed catfish
+sudo pacman -S --noconfirm --needed dconf-editor dialog
+sudo pacman -S --noconfirm --needed dmidecode 
+sudo pacman -S --noconfirm --needed filezilla firefox
+sudo pacman -S --noconfirm --needed gnome-disk-utility 
+sudo pacman -S --noconfirm --needed gparted gpick
+sudo pacman -S --noconfirm --needed hardinfo htop 
+sudo pacman -S --noconfirm --needed lm_sensors lsb-release
+sudo pacman -S --noconfirm --needed net-tools notify-osd openvpn plank
+sudo pacman -S --noconfirm --needed smplayer sysstat 
+sudo pacman -S --noconfirm --needed terminator transmission-gtk
+sudo pacman -S --noconfirm --needed variety vnstat wget unclutter  
+sudo pacman -S --noconfirm --needed polkit udisks2 udiskie
+sudo pacman -S --noconfirm --needed  smplayer sysstat ntfs-3g
+sudo pacman -S --noconfirm --needed terminator transmission-gtk
+sudo pacman -S --noconfirm --needed variety vnstat wget unclutter  
 
 
 sudo systemctl enable vnstat
@@ -569,52 +555,6 @@ fi
 
 
 echo "################################################################"
-echo "playerctl"
-echo "################################################################"
-
-
-package="playerctl"
-
-#----------------------------------------------------------------------------------
-
-#checking if application is already installed or else install with aur helpers
-if pacman -Qi $package &> /dev/null; then
-
-	echo "################################################################"
-	echo "################## "$package" is already installed"
-	echo "################################################################"
-
-else
-
-	#checking which helper is installed
-
-	if pacman -Qi yay &> /dev/null; then
-		
-		echo "Installing with yay"
-		yay -S --noconfirm $package
-		 	
-		  	
-	fi
-
-	# Just checking if installation was successful
-	if pacman -Qi $package &> /dev/null; then
-	
-	echo "################################################################"
-	echo "#########  "$package" has been installed"
-	echo "################################################################"
-
-	else
-
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	echo "!!!!!!!!!  "$package" has NOT been installed"
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-
-	fi
-
-fi
-
-
-echo "################################################################"
 echo "inxi"
 echo "################################################################"
 
@@ -659,12 +599,7 @@ else
 
 fi
 
-echo "################################################################"
-echo "gksu"
-echo "################################################################"
-
-
-package="gksu"
+package="light-locker-gtk2"
 
 #----------------------------------------------------------------------------------
 
@@ -683,8 +618,46 @@ else
 		
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-		 	
-		  	
+			  	
+	fi
+
+	# Just checking if installation was successful
+	if pacman -Qi $package &> /dev/null; then
+	
+	echo "################################################################"
+	echo "#########  "$package" has been installed"
+	echo "################################################################"
+
+	else
+
+	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	echo "!!!!!!!!!  "$package" has NOT been installed"
+	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
+	fi
+
+fi
+
+package="light-locker-settings"
+
+#----------------------------------------------------------------------------------
+
+#checking if application is already installed or else install with aur helpers
+if pacman -Qi $package &> /dev/null; then
+
+	echo "################################################################"
+	echo "################## "$package" is already installed"
+	echo "################################################################"
+
+else
+
+	#checking which helper is installed
+
+	if pacman -Qi yay &> /dev/null; then
+		
+		echo "Installing with yay"
+		yay -S --noconfirm $package
+			  	
 	fi
 
 	# Just checking if installation was successful
@@ -712,12 +685,11 @@ echo "################################################################"
 echo "###        Installing extra desktop components     #############"
 echo "################################################################"
 
-
 echo "################################################################"
-echo "## Installing extra desktop components from Arch repository  ###"
+echo "## ######    Installing extra desktop components from Arch repository    ####### ###"
 echo "################################################################"
 
-sudo pacman -S atom --noconfirm
+# sudo pacman -S atom --noconfirm
 sudo pacman -S audacious --noconfirm
 sudo pacman -S libreoffice-fresh --noconfirm
 sudo pacman -S xfburn --noconfirm
@@ -728,50 +700,9 @@ sudo pacman -S xfce4-screenshooter --noconfirm
 sudo pacman -S xfce4-settings --noconfirm
 sudo pacman -S xorg-xkill --noconfirm
 
-
 echo "################################################################"
-echo "###   Installing extra software from AUR repository    #########"
+echo "#######           Installing extra desktop components from AUR       repository  #######"
 echo "################################################################"
-
-package="aarchup"
-command="aarchup"
-
-#----------------------------------------------------------------------------------
-
-#checking if application is already installed or else install with aur helpers
-if pacman -Qi $package &> /dev/null; then
-
-	echo "################################################################"
-	echo "################## "$package" is already installed"
-	echo "################################################################"
-
-else
-
-	#checking which helper is installed
-
-	if pacman -Qi yay &> /dev/null; then
-		
-		echo "Installing with yay"
-		yay -S --noconfirm $package
-
-	fi
-
-	# Just checking if installation was successful
-	if pacman -Qi $package &> /dev/null; then
-	
-	echo "################################################################"
-	echo "#########  "$package" has been installed"
-	echo "################################################################"
-
-	else
-
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	echo "!!!!!!!!!  "$package" has NOT been installed"
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-
-	fi
-
-fi
 
 package="google-chrome"
 command="google-chrome"
@@ -813,8 +744,7 @@ else
 
 fi
 
-package="google-earth"
-command="google-earth"
+package="popcorntime-bin"
 
 #----------------------------------------------------------------------------------
 
@@ -853,8 +783,8 @@ else
 
 fi
 
-# dependency
-package="python2-pyparted"
+package="balena-etcher"
+command="etcher"
 
 #----------------------------------------------------------------------------------
 
@@ -874,46 +804,6 @@ else
 		echo "Installing with yay"
 		yay -S --noconfirm $package
 			  	
-	fi
-
-	# Just checking if installation was successful
-	if pacman -Qi $package &> /dev/null; then
-	
-	echo "################################################################"
-	echo "#########  "$package" has been installed"
-	echo "################################################################"
-
-	else
-
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	echo "!!!!!!!!!  "$package" has NOT been installed"
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-
-	fi
-
-fi
-
-
-package="mintstick-git"
-command="mintstick"
-
-#----------------------------------------------------------------------------------
-
-#checking if application is already installed or else install with aur helpers
-if pacman -Qi $package &> /dev/null; then
-
-	echo "################################################################"
-	echo "################## "$package" is already installed"
-	echo "################################################################"
-
-else
-
-	#checking which helper is installed
-	if pacman -Qi yay &> /dev/null; then
-
-		echo "Installing with yay"
-		yay -S --noconfirm $package
-		  	
 	fi
 
 	# Just checking if installation was successful

@@ -153,7 +153,7 @@ echo "################################################################"
 
 sudo pacman -S --noconfirm --needed catfish
 sudo pacman -S --noconfirm --needed dconf-editor dialog
-sudo pacman -S --noconfirm --needed dmidecode 
+sudo pacman -S --noconfirm --needed dmidecode feh
 sudo pacman -S --noconfirm --needed filezilla firefox
 sudo pacman -S --noconfirm --needed gnome-disk-utility 
 sudo pacman -S --noconfirm --needed gparted gpick
@@ -161,7 +161,7 @@ sudo pacman -S --noconfirm --needed hardinfo htop
 sudo pacman -S --noconfirm --needed lm_sensors lsb-release
 sudo pacman -S --noconfirm --needed net-tools notify-osd openvpn plank
 sudo pacman -S --noconfirm --needed smplayer sysstat 
-sudo pacman -S --noconfirm --needed terminator transmission-gtk
+sudo pacman -S --noconfirm --needed terminator transmission-gtk tint2
 sudo pacman -S --noconfirm --needed variety vnstat wget unclutter  
 sudo pacman -S --noconfirm --needed polkit udisks2 udiskie
 sudo pacman -S --noconfirm --needed  smplayer sysstat ntfs-3g
@@ -599,7 +599,7 @@ else
 
 fi
 
-package="light-locker-gtk2"
+package="light-locker"
 
 #----------------------------------------------------------------------------------
 

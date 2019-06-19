@@ -164,9 +164,10 @@ sudo pacman -S --noconfirm --needed smplayer sysstat
 sudo pacman -S --noconfirm --needed terminator transmission-gtk tint2
 sudo pacman -S --noconfirm --needed variety vnstat wget unclutter  
 sudo pacman -S --noconfirm --needed polkit udisks2 udiskie
-sudo pacman -S --noconfirm --needed  smplayer sysstat ntfs-3g
+sudo pacman -S --noconfirm --needed smplayer sysstat ntfs-3g
 sudo pacman -S --noconfirm --needed terminator transmission-gtk
-sudo pacman -S --noconfirm --needed variety vnstat wget unclutter  
+sudo pacman -S --noconfirm --needed variety vnstat wget unclutter
+sudo pacman -S --noconfirm --needed geany  
 
 
 sudo systemctl enable vnstat

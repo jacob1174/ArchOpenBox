@@ -2,7 +2,7 @@
 set -e
 ##################################################################################################################
 # Written to be used on 64 bits computers
-# Author 	: 	Jacob Lutz	
+# Author 	: 	Jacob Lutz
 # email 	: 	jlutz152
 ##################################################################################################################
 ##################################################################################################################
@@ -80,10 +80,20 @@ echo "######## AMD drivers has been installed ########################"
 echo "################################################################"
 
 echo "################################################################"
+echo "#######   Installing Nvidia Video Drivers       ################"
+echo "################################################################"
+
+sudo pacman -S nvidia
+
+echo "################################################################"
+echo "######## Nvidia drivers has been installed ########################"
+echo "################################################################"
+
+echo "################################################################"
 echo "#######Installing Lightdm ### Installing Lightdm ###############"
 echo "################################################################"
 
-sudo pacman -S lightdm --noconfirm 
+sudo pacman -S lightdm --noconfirm
 sudo pacman -S lightdm-gtk-greeter --noconfirm
 sudo pacman -S lightdm-gtk-greeter-settings --noconfirm
 
@@ -113,7 +123,7 @@ echo "################################################################"
 echo "#########        Install Sound Software         ################"
 echo "################################################################"
 
-sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol  --noconfirm --needed
+sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pasystray --noconfirm --needed
 sudo pacman -S alsa-utils alsa-plugins alsa-lib alsa-firmware --noconfirm --needed
 sudo pacman -S gst-plugins-good gst-plugins-bad gst-plugins-base gst-plugins-ugly  gstreamer  --noconfirm --needed
 
@@ -155,19 +165,19 @@ sudo pacman -S --noconfirm --needed catfish
 sudo pacman -S --noconfirm --needed dconf-editor dialog
 sudo pacman -S --noconfirm --needed dmidecode feh
 sudo pacman -S --noconfirm --needed filezilla firefox
-sudo pacman -S --noconfirm --needed gnome-disk-utility 
+sudo pacman -S --noconfirm --needed gnome-disk-utility
 sudo pacman -S --noconfirm --needed gparted gpick
-sudo pacman -S --noconfirm --needed hardinfo htop 
+sudo pacman -S --noconfirm --needed hardinfo htop
 sudo pacman -S --noconfirm --needed lm_sensors lsb-release
 sudo pacman -S --noconfirm --needed net-tools notify-osd openvpn plank
-sudo pacman -S --noconfirm --needed smplayer sysstat 
+sudo pacman -S --noconfirm --needed smplayer sysstat
 sudo pacman -S --noconfirm --needed terminator transmission-gtk tint2
-sudo pacman -S --noconfirm --needed variety vnstat wget unclutter  
+sudo pacman -S --noconfirm --needed variety vnstat wget unclutter
 sudo pacman -S --noconfirm --needed polkit udisks2 udiskie
 sudo pacman -S --noconfirm --needed smplayer sysstat ntfs-3g
 sudo pacman -S --noconfirm --needed terminator transmission-gtk
 sudo pacman -S --noconfirm --needed variety vnstat wget unclutter
-sudo pacman -S --noconfirm --needed geany  
+sudo pacman -S --noconfirm --needed geany
 
 
 sudo systemctl enable vnstat
@@ -185,7 +195,7 @@ echo "#########          Installing from AUR          ################"
 echo "################################################################"
 
 echo "################################################################"
-echo "obmenu-generator"   
+echo "obmenu-generator"
 echo "################################################################"
 
 
@@ -205,15 +215,15 @@ else
 	#checking which helper is installed
 
 	if pacman -Qi yay &> /dev/null; then
-		
+
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-			  	
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -230,7 +240,7 @@ fi
 
 
 echo "################################################################"
-echo "perl-file-desktopentry"   
+echo "perl-file-desktopentry"
 echo "################################################################"
 
 
@@ -250,16 +260,16 @@ else
 	#checking which helper is installed
 
 	if pacman -Qi yay &> /dev/null; then
-		
+
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-		 	
-			  	
+
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -277,7 +287,7 @@ fi
 
 
 echo "################################################################"
-echo "gtk2-perl"   
+echo "gtk2-perl"
 echo "################################################################"
 
 
@@ -297,16 +307,16 @@ else
 	#checking which helper is installed
 
 	if pacman -Qi yay &> /dev/null; then
-		
+
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-		 	
-			  	
+
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -324,7 +334,7 @@ fi
 
 
 echo "################################################################"
-echo "openbox-themes"   
+echo "openbox-themes"
 echo "################################################################"
 
 
@@ -341,18 +351,18 @@ if pacman -Qi $package &> /dev/null; then
 
 else
 
-	#checking which helper is installed 
+	#checking which helper is installed
 
 	if pacman -Qi yay &> /dev/null; then
-		
+
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-			  	
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -370,7 +380,7 @@ fi
 
 
 echo "################################################################"
-echo "lxinput"   
+echo "lxinput"
 echo "################################################################"
 
 
@@ -390,16 +400,16 @@ else
 	#checking which helper is installed
 
 	if pacman -Qi yay &> /dev/null; then
-		
+
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-		 	
-			  	
+
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -417,7 +427,7 @@ fi
 
 
 echo "################################################################"
-echo "lxappearance-obconf"   
+echo "lxappearance-obconf"
 echo "################################################################"
 
 
@@ -437,16 +447,16 @@ else
 	#checking which helper is installed
 
 	if pacman -Qi yay &> /dev/null; then
-		
+
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-		 	
-			  	
+
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -463,7 +473,7 @@ fi
 
 
 echo "################################################################"
-echo "obkey-git"   
+echo "obkey-git"
 echo "################################################################"
 
 
@@ -483,16 +493,16 @@ else
 	#checking which helper is installed
 
 	if pacman -Qi yay &> /dev/null; then
-		
+
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-	 	
-			  	
+
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -529,16 +539,16 @@ else
 	#checking which helper is installed
 
 	if pacman -Qi yay &> /dev/null; then
-		
+
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-		 	
-			  	
+
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -556,49 +566,8 @@ fi
 
 
 echo "################################################################"
-echo "inxi"
+echo "light-locker"
 echo "################################################################"
-
-
-package="inxi"
-
-#----------------------------------------------------------------------------------
-
-#checking if application is already installed or else install with aur helpers
-if pacman -Qi $package &> /dev/null; then
-
-	echo "################################################################"
-	echo "################## "$package" is already installed"
-	echo "################################################################"
-
-else
-
-	#checking which helper is installed
-
-	if pacman -Qi yay &> /dev/null; then
-		
-		echo "Installing with yay"
-		yay -S --noconfirm $package
-		 	
-		  	
-	fi
-
-	# Just checking if installation was successful
-	if pacman -Qi $package &> /dev/null; then
-	
-	echo "################################################################"
-	echo "#########  "$package" has been installed"
-	echo "################################################################"
-
-	else
-
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	echo "!!!!!!!!!  "$package" has NOT been installed"
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-
-	fi
-
-fi
 
 package="light-locker"
 
@@ -616,15 +585,15 @@ else
 	#checking which helper is installed
 
 	if pacman -Qi yay &> /dev/null; then
-		
+
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-			  	
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -655,15 +624,15 @@ else
 	#checking which helper is installed
 
 	if pacman -Qi yay &> /dev/null; then
-		
+
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-			  	
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -722,15 +691,15 @@ else
 	#checking which helper is installed
 
 	if pacman -Qi yay &> /dev/null; then
-		
+
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-			  	
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -761,15 +730,15 @@ else
 	#checking which helper is installed
 
 	if pacman -Qi yay &> /dev/null; then
-		
+
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-			  	
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -784,45 +753,6 @@ else
 
 fi
 
-package="balena-etcher"
-command="etcher"
-
-#----------------------------------------------------------------------------------
-
-#checking if application is already installed or else install with aur helpers
-if pacman -Qi $package &> /dev/null; then
-
-	echo "################################################################"
-	echo "################## "$package" is already installed"
-	echo "################################################################"
-
-else
-
-	#checking which helper is installed
-
-	if pacman -Qi yay &> /dev/null; then
-		
-		echo "Installing with yay"
-		yay -S --noconfirm $package
-			  	
-	fi
-
-	# Just checking if installation was successful
-	if pacman -Qi $package &> /dev/null; then
-	
-	echo "################################################################"
-	echo "#########  "$package" has been installed"
-	echo "################################################################"
-
-	else
-
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	echo "!!!!!!!!!  "$package" has NOT been installed"
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-
-	fi
-
-fi
 
 package="neofetch"
 command="neofetch"
@@ -843,12 +773,12 @@ else
 
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-		  	
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -881,12 +811,12 @@ else
 
 		echo "Installing with yay"
 		yay -S --noconfirm $package
-		  	
+
 	fi
 
 	# Just checking if installation was successful
 	if pacman -Qi $package &> /dev/null; then
-	
+
 	echo "################################################################"
 	echo "#########  "$package" has been installed"
 	echo "################################################################"
@@ -906,7 +836,7 @@ echo "######## Extra desktop components have been installed  #########"
 echo "################################################################"
 
 obmenu-generator -p -i
-	
+
 echo "################################################################"
 echo "######## Please reboot and sign in and setup network   #########"
 echo "################################################################"

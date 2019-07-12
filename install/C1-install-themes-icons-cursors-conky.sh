@@ -12,6 +12,48 @@
 # ##################################################################################################################
 
 
+
+package="ttf-google-fonts-git"
+
+
+#----------------------------------------------------------------------------------
+
+#checking if application is already installed or else install with aur helpers
+if pacman -Qi $package &> /dev/null; then
+
+	echo "################################################################"
+	echo "################## "$package" is already installed"
+	echo "################################################################"
+
+else
+
+	#checking which helper is installed
+
+	if pacman -Qi yay &> /dev/null; then
+		
+		echo "Installing with yay"
+		yay -S --noconfirm $package
+			  	
+	fi
+
+	# Just checking if installation was successful
+	if pacman -Qi $package &> /dev/null; then
+	
+	echo "################################################################"
+	echo "#########  "$package" has been installed"
+	echo "################################################################"
+
+	else
+
+	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	echo "!!!!!!!!!  "$package" has NOT been installed"
+	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
+	fi
+
+fi
+
+
 package="ttf-font-awesome"
 
 
@@ -331,81 +373,81 @@ else
 fi
 
 
-echo"########################################"
-echo"########        Conky Themes   #########"
-echo"########################################"
+# echo"########################################"
+# echo"########        Conky Themes   #########"
+# echo"########################################"
 
 
 
-# if there is already a folder in tmp, delete or else do nothing
-[ -d /tmp/aureola ] && rm -rf "/tmp/aureola" || echo ""
-# download the github in folder /tmp/aureola
+# # if there is already a folder in tmp, delete or else do nothing
+# [ -d /tmp/aureola ] && rm -rf "/tmp/aureola" || echo ""
+# # download the github in folder /tmp/aureola
 
-echo "################################################################"
-echo "Checking if git is installed"
-echo "Install git for an easy installation"
+# echo "################################################################"
+# echo "Checking if git is installed"
+# echo "Install git for an easy installation"
 
 
-	# G I T
+# 	# G I T
 
-	# check if git is installed
-	if which git > /dev/null; then
-		echo "git was installed. Proceding..."
+# 	# check if git is installed
+# 	if which git > /dev/null; then
+# 		echo "git was installed. Proceding..."
 
-		else
+# 		else
 
-		echo "################################################################"
-		echo "installing git for this script to work"
-		echo "################################################################"
+# 		echo "################################################################"
+# 		echo "installing git for this script to work"
+# 		echo "################################################################"
 
-	  	sudo pacman -S git --noconfirm
+# 	  	sudo pacman -S git --noconfirm
 		  	
-	fi
+# 	fi
 
 
 
 
-echo "################################################################"
-echo "Downloading the files from github to tmp directory"
+# echo "################################################################"
+# echo "Downloading the files from github to tmp directory"
 
-rm -rf /tmp/aureola
+# rm -rf /tmp/aureola
 
-git clone https://github.com/erikdubois/Aureola /tmp/aureola
+# git clone https://github.com/erikdubois/Aureola /tmp/aureola
 
-# if there is already a folder in tmp, delete or else do nothing
-[ -d ~/.aureola ] && rm -rf ~/.aureola 
-mv -f /tmp/aureola ~/.aureola
+# # if there is already a folder in tmp, delete or else do nothing
+# [ -d ~/.aureola ] && rm -rf ~/.aureola 
+# mv -f /tmp/aureola ~/.aureola
 
-rm -rf /tmp/aureola
+# rm -rf /tmp/aureola
 
-echo "################################################################"
-echo "###################    aureola installed  ######################"
-echo "################################################################"
+# echo "################################################################"
+# echo "###################    aureola installed  ######################"
+# echo "################################################################"
 
-echo "################################################################"
-echo "###################    Sardi Icons Installing   ################"
-echo "################################################################"
+# echo "################################################################"
+# echo "###################    Sardi Icons Installing   ################"
+# echo "################################################################"
 
-# cleaning tmp
-[ -d /tmp/sardi ] && rm -rf /tmp/sardi
+# # cleaning tmp
+# [ -d /tmp/sardi ] && rm -rf /tmp/sardi
 
-# if there is no hidden folder then make one
-[ -d $HOME"/.icons" ] || mkdir -p $HOME"/.icons"
+# # if there is no hidden folder then make one
+# [ -d $HOME"/.icons" ] || mkdir -p $HOME"/.icons"
 
-wget -O /tmp/sardi.tar.gz "https://sourceforge.net/projects/sardi/files/latest/download?source=files"
-mkdir /tmp/sardi
-tar -zxf /tmp/sardi.tar.gz -C /tmp/sardi
-rm /tmp/sardi.tar.gz
-cp -rf /tmp/sardi/* ~/.icons/
+# wget -O /tmp/sardi.tar.gz "https://sourceforge.net/projects/sardi/files/latest/download?source=files"
+# mkdir /tmp/sardi
+# tar -zxf /tmp/sardi.tar.gz -C /tmp/sardi
+# rm /tmp/sardi.tar.gz
+# cp -rf /tmp/sardi/* ~/.icons/
 
-# cleaning tmp
-[ -d /tmp/sardi ] && rm -rf /tmp/sardi
+# # cleaning tmp
+# [ -d /tmp/sardi ] && rm -rf /tmp/sardi
 
 
 
-echo "################################################################"
-echo "###################    Sardi icons done   ######################"
-echo "################################################################"
+# echo "################################################################"
+# echo "###################    Sardi icons done   ######################"
+# echo "################################################################"
 
 
 echo "################################################################"

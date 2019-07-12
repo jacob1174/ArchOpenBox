@@ -178,6 +178,8 @@ sudo pacman -S --noconfirm --needed smplayer sysstat ntfs-3g
 sudo pacman -S --noconfirm --needed terminator transmission-gtk
 sudo pacman -S --noconfirm --needed variety vnstat wget unclutter
 sudo pacman -S --noconfirm --needed geany
+sudo pacman -S --noconfirm --needed pcmanfm
+sudo pacman -S --noconfirm --needed lxinput
 
 
 sudo systemctl enable vnstat
@@ -378,60 +380,12 @@ else
 fi
 
 
-
 echo "################################################################"
-echo "lxinput"
-echo "################################################################"
-
-
-package="lxinput"
-
-#----------------------------------------------------------------------------------
-
-#checking if application is already installed or else install with aur helpers
-if pacman -Qi $package &> /dev/null; then
-
-	echo "################################################################"
-	echo "################## "$package" is already installed"
-	echo "################################################################"
-
-else
-
-	#checking which helper is installed
-
-	if pacman -Qi yay &> /dev/null; then
-
-		echo "Installing with yay"
-		yay -S --noconfirm $package
-
-
-	fi
-
-	# Just checking if installation was successful
-	if pacman -Qi $package &> /dev/null; then
-
-	echo "################################################################"
-	echo "#########  "$package" has been installed"
-	echo "################################################################"
-
-	else
-
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	echo "!!!!!!!!!  "$package" has NOT been installed"
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-
-	fi
-
-fi
-
-
-
-echo "################################################################"
-echo "lxappearance-obconf"
+echo "lxappearance-gtk2-git"
 echo "################################################################"
 
 
-package="lxappearance-obconf"
+package="lxappearance-gtk2-git"
 
 #----------------------------------------------------------------------------------
 

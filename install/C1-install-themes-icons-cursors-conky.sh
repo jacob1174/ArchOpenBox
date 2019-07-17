@@ -175,42 +175,42 @@ else
 fi
 
 
-package="arc-faenza-icon-theme"
+# package="arc-faenza-icon-theme"
 
-#checking if application is already installed or else install with aur helpers
-if pacman -Qi $package &> /dev/null; then
+# #checking if application is already installed or else install with aur helpers
+# if pacman -Qi $package &> /dev/null; then
 
-	echo "################################################################"
-	echo "################## "$package" is already installed"
-	echo "################################################################"
+# 	echo "################################################################"
+# 	echo "################## "$package" is already installed"
+# 	echo "################################################################"
 
-else
+# else
 
-	#checking which helper is installed
+# 	#checking which helper is installed
 
-	if pacman -Qi yay &> /dev/null; then
+# 	if pacman -Qi yay &> /dev/null; then
 		
-		echo "Installing with yay"
-		yay -S --noconfirm $package
+# 		echo "Installing with yay"
+# 		yay -S --noconfirm $package
 			  	
-	fi
+# 	fi
 
-	# Just checking if installation was successful
-	if pacman -Qi $package &> /dev/null; then
+# 	# Just checking if installation was successful
+# 	if pacman -Qi $package &> /dev/null; then
 	
-	echo "################################################################"
-	echo "#########  "$package" has been installed"
-	echo "################################################################"
+# 	echo "################################################################"
+# 	echo "#########  "$package" has been installed"
+# 	echo "################################################################"
 
-	else
+# 	else
 
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	echo "!!!!!!!!!  "$package" has NOT been installed"
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+# 	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+# 	echo "!!!!!!!!!  "$package" has NOT been installed"
+# 	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
-	fi
+# 	fi
 
-fi
+# fi
 
 package="la-capitaine-icon-theme"
 

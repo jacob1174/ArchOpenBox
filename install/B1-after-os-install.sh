@@ -111,7 +111,6 @@ echo "################################################################"
 
 sudo pacman -S openbox  --noconfirm
 sudo pacman -S obconf  --noconfirm
-sudo pacman -S obmenu  --noconfirm
 sudo pacman -S oblogout  --noconfirm
 
 echo "################################################################"
@@ -180,7 +179,7 @@ sudo pacman -S --noconfirm --needed variety vnstat wget unclutter
 sudo pacman -S --noconfirm --needed geany
 sudo pacman -S --noconfirm --needed pcmanfm
 sudo pacman -S --noconfirm --needed lxinput
-
+sudo pacman -S --noconfirm --needed xterm
 
 sudo systemctl enable vnstat
 sudo systemctl start vnstat
